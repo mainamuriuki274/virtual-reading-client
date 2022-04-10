@@ -1,0 +1,22 @@
+.page {
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+.page__left {
+  background-image: linear-gradient(to left, #00000026 0%, #00000000 10%);
+}
+.page__right {
+  background-image: linear-gradient(to right, #00000026 0%, #00000000 10%);
+}
+
+.page-number {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
