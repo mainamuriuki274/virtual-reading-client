@@ -20,3 +20,14 @@
   width: 100%;
   text-align: center;
 }
+
+.content {
+  font-size: 1.5rem;
+  line-height: 3;
+}
+.word {
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}

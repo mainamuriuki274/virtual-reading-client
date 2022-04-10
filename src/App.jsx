@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
-import BookPage from './pages/BookPage/BookPage';
-import { BOOKS } from './utils/queries';
+import BookPage from './pages/BookPage';
+import { BOOKS } from './constants/queries';
 
 const App = () => {
   // Whenever this component renders, the useQuery hook automatically executes our query
