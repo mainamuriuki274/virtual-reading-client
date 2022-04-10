@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
-import NavigationBtn from '../../components/NavigationBtn/NavigationBtn';
-import Page from '../../components/Page/Page';
-import styles from './BookPage.module.scss';
+import NavigationBtn from '../../components/NavigationBtn';
+import styles from './styles.module.scss';
+import Book from '../../components/Book';
+import { pageDetailsShape } from '../../constants/propShapes';
 
 const BookPage = ({ pages }) => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -34,18 +35,8 @@ const BookPage = ({ pages }) => {
 
   return (
     <section className={styles.container}>
-      <div className={styles.book}>
-        <Page
-          pageDetails={pages[currentPage]}
-          variant="left"
-          pageNumber={[currentPage + 1]} // increase index by 1 cause its starting from 0
-        />
-        <Page
-          pageDetails={pages[currentPage + 1]}
-          variant="right"
-          pageNumber={[currentPage + 2]} // increase index by 2 for the right page cause its starting from 0
-        />
-      </div>
+      <Book pages={pages} currentPage={currentPage} />
+
       <div className={styles['navigation-btns']}>
         <NavigationBtn
           name="Previous Page"
@@ -60,8 +51,9 @@ const BookPage = ({ pages }) => {
 };
 
 BookPage.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  pages: PropTypes.arrayOf(PropTypes.object).isRequired,
+  pages: PropTypes.arrayOf(
+    PropTypes.objectOf(PropTypes.shape(pageDetailsShape))
+  ).isRequired,
 };
 
 export default BookPage;

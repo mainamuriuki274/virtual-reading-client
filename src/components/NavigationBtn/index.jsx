@@ -1,5 +1,5 @@
 import { PropTypes } from 'prop-types';
-import styles from './NavigationBtn.module.scss';
+import styles from './styles.module.scss';
 
 const NavigationBtn = ({ name, onClick, visible }) => (
   <button
