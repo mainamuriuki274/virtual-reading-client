@@ -1,0 +1,30 @@
+@import '/src/assets/styles/abstracts/colors';
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.book {
+  padding: 0.8rem;
+  background-color: $primary-color;
+  width: 700px;
+  height: 600px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation-btns {
+  width: auto;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10;
+}
