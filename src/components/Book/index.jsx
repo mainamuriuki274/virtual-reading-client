@@ -1,6 +1,6 @@
 import { PropTypes } from 'prop-types';
 import { pageDetailsShape } from '../../constants/propShapes';
-import BookPage from '../BookPage';
+import BookPage from '../Page';
 import styles from './styles.module.scss';
 
 const Book = ({ pages, currentPage }) => (
