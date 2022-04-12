@@ -25,9 +25,12 @@
   font-size: 1.5rem;
   line-height: 3;
 }
-.word {
-  cursor: pointer;
-  &:hover {
-    text-decoration: underline;
+
+@keyframes flipPageForwards {
+  0% {
+    transform: rotateY(0);
+  }
+  50% {
+    transform: rotateY(-180deg);
   }
 }
