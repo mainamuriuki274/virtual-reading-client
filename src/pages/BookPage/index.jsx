@@ -35,6 +35,7 @@ const BookPage = ({ pages }) => {
 
   return (
     <section className={styles.container}>
+      <h1 className={styles.title}>Virtual Reading Client</h1>
       <Book pages={pages} currentPage={currentPage} />
 
       <div className={styles['navigation-btns']}>
@@ -45,6 +46,16 @@ const BookPage = ({ pages }) => {
         />
 
         <NavigationBtn name="Next Page" onClick={nextPage} visible={hasNext} />
+      </div>
+      <div className={styles['bg-attribute']}>
+        Photo by&nbsp;
+        <a href="https://unsplash.com/@mullins?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+          David Mullins
+        </a>
+        &nbsp; on &nbsp;
+        <a href="https://unsplash.com/s/photos/sunset?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+          Unsplash
+        </a>
       </div>
     </section>
   );
