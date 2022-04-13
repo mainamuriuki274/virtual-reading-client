@@ -30,9 +30,13 @@ const Modal = ({ modalContent, visible, onHide }) => (
 );
 
 Modal.propTypes = {
-  modalContent: PropTypes.objectOf(pageDetailsShape).isRequired,
+  modalContent: PropTypes.objectOf(pageDetailsShape),
   visible: PropTypes.bool.isRequired,
   onHide: PropTypes.func.isRequired,
+};
+
+Modal.defaultProps = {
+  modalContent: '',
 };
 
 export default Modal;

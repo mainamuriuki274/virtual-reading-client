@@ -1,4 +1,4 @@
-@use '../../styles/abstracts/colors';
+@use '../../styles/abstracts' as *;
 
 .container {
   width: 100vw;
@@ -17,7 +17,7 @@
 
 .title {
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: normal;
   text-align: center;
 }
@@ -31,12 +31,18 @@
 }
 
 .bg-attribute {
-  position: absolute;
+  position: fixed;
   bottom: 2rem;
   left: 2rem;
   color: gray;
   font-size: 0.8rem;
   a {
     color: gray;
+  }
+}
+
+@include for-tablet-down {
+  .bg-attribute {
+    position: absolute;
   }
 }
