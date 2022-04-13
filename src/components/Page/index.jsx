@@ -1,5 +1,6 @@
 import { PropTypes } from 'prop-types';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { pageDetailsShape } from '../../constants/propShapes';
 import ClickableWord from '../ClickableWord';
 import Modal from '../Modal';
@@ -72,9 +73,11 @@ const Page = ({ pageDetails, variant, pageNumber }) => {
       >
         <p className={styles.content}>
           {mapValueToContent(pageDetails).map((data) => {
+            const uniqueId = uuidv4(); // generate unique id for the child components
             if (Array.isArray(data)) {
               return (
                 <ClickableWord
+                  key={uniqueId}
                   word={data[0]}
                   value={data[1]}
                   onClick={handleWordClick}
@@ -82,7 +85,7 @@ const Page = ({ pageDetails, variant, pageNumber }) => {
               );
             }
 
-            return <span>{data}</span>;
+            return <span key={uniqueId}>{data}</span>;
           })}
         </p>
         <p className={styles['page-number']}>{pageNumber}</p>
